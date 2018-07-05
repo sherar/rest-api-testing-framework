@@ -1,0 +1,21 @@
+{
+    "name": "rest-api-testing-framework",
+    "version": "1.0.0",
+    "description": "Example API Testing",
+    "author": "Gerardo Prieto",
+    "dependencies": {
+        "body-parser": "^1.17.1",
+        "chai": "^3.5.0",
+        "mocha": "^3.2.0",
+        "mocha-jenkins-reporter": "^0.3.7",
+        "supertest": "^3.0.0"
+    },
+    "scripts": {
+        "prestart": "npm install;",
+        "start": "JUNIT_REPORT_PATH=test-result/result.xml JUNIT_REPORT_STACK=1 mocha --timeout 5000 --colors --reporter mocha-jenkins-reporter || true"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:sherar/rest-api-testing-framework.git"
+    }
+}
