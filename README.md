@@ -9,7 +9,7 @@ This is a REST API Testing Framework made with Supertest (https://www.npmjs.com/
 
 # Installation & Execution
 
-Clone this project, go to the project root folder
+Clone this project and then go to the project root folder
 
 ## Local run
 
