@@ -19,6 +19,6 @@ Clone this project, go to the project root folder
 
 `docker-compose up` - It will run REST API tests inside a Docker container
 
-## Test Report
+# Test Report
 
 It can be found under /test-result folder

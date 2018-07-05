@@ -1,7 +1,8 @@
 {
     "name": "rest-api-testing-framework",
     "version": "1.0.0",
-    "description": "Example API Testing",
+    "license": "UNLICENSED",
+    "description": "Example of a Rest-API Framework Testing using Mocha, Chai and Supertest",
     "author": "Gerardo Prieto",
     "dependencies": {
         "body-parser": "^1.17.1",
