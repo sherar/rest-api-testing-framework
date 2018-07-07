@@ -1,14 +1,14 @@
 <testsuites name="Mocha Tests">
-  <testsuite name="Bank Accounts" tests="5" errors="0" failures="0" skipped="0" timestamp="2018-07-05T14:16:26" time="11.417">
-    <testcase classname="Bank Accounts" name="/required_details - Get required bank account identifier elements per country" time="1.498">
+  <testsuite name="Bank Accounts" tests="5" errors="0" failures="0" skipped="0" timestamp="2018-07-07T04:22:23" time="11.272">
+    <testcase classname="Bank Accounts" name="/required_details - Get required bank account identifier elements per country" time="1.313">
     </testcase>
-    <testcase classname="Bank Accounts" name="/index - Get all the active bank accounts for the specified filters" time="1.552">
+    <testcase classname="Bank Accounts" name="/index - Get all the active bank accounts for the specified filters" time="1.39">
     </testcase>
-    <testcase classname="Bank Accounts" name="/account - Get details on specific bank account" time="1.719">
+    <testcase classname="Bank Accounts" name="/account - Get details on specific bank account" time="1.43">
     </testcase>
-    <testcase classname="Bank Accounts" name="/create + /delete - Create and Suspend a bank account" time="3.57">
+    <testcase classname="Bank Accounts" name="/create + /delete - Create and Suspend a bank account" time="3.909">
     </testcase>
-    <testcase classname="Bank Accounts" name="/login - Login with invalid credentials" time="0.003">
+    <testcase classname="Bank Accounts" name="/login - Login with invalid credentials" time="0.002">
     </testcase>
   </testsuite>
 </testsuites>

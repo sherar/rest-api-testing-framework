@@ -35,11 +35,11 @@ module.exports = {
         newAccountDetails: {
             companyRef: 'IURAER4WT',
             accountAlias: 'MyTestAccount',
-            bankCountryCode: 'BE',
-            bankCode: '{"bic_swift":"BPOTBEB1XXX"}',
-            accountNumber: '{"iban":"BE63730401522232"}',
+            bankCountryCode: 'GB',
+            bankCode: '{"bic_swift":"LOYDGB21T00"}',
+            accountNumber: '{"iban":"GB04LOYD77930985984947"}',
             currencies: 'EUR',
-            reference: 'test'
+            reference: 'AutomationTestAccount'
         }
     }
 };
