@@ -4,7 +4,7 @@ const envVars = require("../support/env"),
     baseUrl = envVars["apiUrl"],
     basePath = endpoints["bankAccounts"];
 
-
+var async = require('async');
 var api = require('supertest')(baseUrl);
 var expect = require('chai').expect;
 
@@ -37,7 +37,7 @@ describe("Bank Accounts", function () {
     });
 
 
-    it("required_details - Get required bank account identifier elements per country", function (done) {
+    it("/required_details - Get required bank account identifier elements per country", function (done) {
         const requiredElementsPerCountry = env["requiredAccountIdentifierElements"];
         api.get(basePath + "/required_details")
             .set(commonHeaders)
@@ -68,30 +68,6 @@ describe("Bank Accounts", function () {
             .expect(200)
             .expect(hasValidAccountProperties)
             .end(done);
-    });
-
-    it("/create + /delete - Create and Suspend a bank account", function (done) {
-        const account = env["newAccountDetails"];
-        api.post(basePath + "/create")
-            .set(commonHeaders)
-            .send(account)
-            .expect("Content-Type", /json/)
-            .expect(200)
-            .expect(hasValidAccountProperties)
-            .end();
-
-        api.delete(basePath + "/delete")
-            .set(commonHeaders)
-            .send({
-                companyRef: account["companyRef"],
-                reference: account["reference"]
-            })
-            .expect(200)
-            .end(function (err, response) {
-                expect(response.body).to.equal(null);
-                done();
-            });
-
     });
 
     it("/login - Login with invalid credentials", function done() {
