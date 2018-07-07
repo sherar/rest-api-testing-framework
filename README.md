@@ -17,7 +17,7 @@ Clone this project and then go to the project root folder
 
 ## Run it inside Docker container
 
-`docker-compose up` - It will run REST API tests inside a Docker container
+`docker-compose up --build` - It will run REST API Testing Framework inside a Docker container
 
 # Test Report
 

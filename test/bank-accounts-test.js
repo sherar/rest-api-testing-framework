@@ -1,12 +1,12 @@
-const should = require("chai").should(),
-    expect = require("chai").expect,
-    supertest = require("supertest"),
-    envVars = require("../support/env"),
-    api = supertest(envVars["apiUrl"]),
+const envVars = require("../support/env"),
+    env = envVars["bankAccounts"],
     endpoints = envVars["endpoints"],
-    basePath = endpoints["bankAccounts"],
-    env = envVars["bankAccounts"];
+    baseUrl = envVars["apiUrl"],
+    basePath = endpoints["bankAccounts"];
 
+
+var api = require('supertest')(baseUrl);
+var expect = require('chai').expect;
 
 describe("Bank Accounts", function () {
 
@@ -26,7 +26,6 @@ describe("Bank Accounts", function () {
             })
     });
 
-
     after(function (done) {
         api.get("/logoff")
             .set(commonHeaders)
@@ -34,11 +33,11 @@ describe("Bank Accounts", function () {
             .expect(200)
             .expect({
                 status: "success"
-            }, done);
+            }, done());
     });
 
 
-    it("/required_details - Get required bank account identifier elements per country", function (done) {
+    it("required_details - Get required bank account identifier elements per country", function (done) {
         const requiredElementsPerCountry = env["requiredAccountIdentifierElements"];
         api.get(basePath + "/required_details")
             .set(commonHeaders)
@@ -75,23 +74,24 @@ describe("Bank Accounts", function () {
         const account = env["newAccountDetails"];
         api.post(basePath + "/create")
             .set(commonHeaders)
-            .send(env["newAccountDetails"])
+            .send(account)
             .expect("Content-Type", /json/)
             .expect(200)
             .expect(hasValidAccountProperties)
-            .end(function () {
-                api.delete(basePath + "/delete")
-                    .set(commonHeaders)
-                    .send({
-                        companyRef: account["companyRef"],
-                        reference: account["reference"]
-                    })
-                    .expect(200)
-                    .end(function (err, response) {
-                        expect(response.body).to.equal(null);
-                        done();
-                    });
+            .end();
+
+        api.delete(basePath + "/delete")
+            .set(commonHeaders)
+            .send({
+                companyRef: account["companyRef"],
+                reference: account["reference"]
+            })
+            .expect(200)
+            .end(function (err, response) {
+                expect(response.body).to.equal(null);
+                done();
             });
+
     });
 
     it("/login - Login with invalid credentials", function done() {
@@ -104,7 +104,7 @@ describe("Bank Accounts", function () {
                 expect(response.body.errorDetails).to.equal("account not found");
                 done();
             })
-    })
+    });
 
 
     function hasValidAccountProperties(res) {
