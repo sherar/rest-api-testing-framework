@@ -21,4 +21,4 @@ Clone this project and then go to the project root folder
 
 # Test Report
 
-It can be found under /test-result folder
+It can be found in /test-result folder

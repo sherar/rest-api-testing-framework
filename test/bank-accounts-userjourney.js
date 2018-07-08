@@ -43,7 +43,7 @@ describe("Bank Accounts - User Journeys", function () {
         const account = env["newAccountDetails"];
 
         async.series([
-            //Purgue old existing account
+            //Remove account in case that exists previously
             function (callback) {
                 api.delete(basePath + "/delete")
                     .set(commonHeaders)
@@ -54,7 +54,7 @@ describe("Bank Accounts - User Journeys", function () {
                     .end(callback);
             },
 
-            // Check that account doesn't exist
+            // Check that account going to be created doesn't exist
             function (callback) {
                 api.get(basePath + "/account")
                     .set(commonHeaders)
@@ -90,7 +90,7 @@ describe("Bank Accounts - User Journeys", function () {
                     .end(callback);
             },
 
-            // Delete
+            // Delete account
             function (callback) {
                 api.delete(basePath + "/delete")
                     .set(commonHeaders)
