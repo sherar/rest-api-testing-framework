@@ -4,7 +4,6 @@ const envVars = require("../support/env"),
     baseUrl = envVars["apiUrl"],
     basePath = endpoints["bankAccounts"];
 
-var async = require('async');
 var api = require('supertest')(baseUrl);
 var expect = require('chai').expect;
 

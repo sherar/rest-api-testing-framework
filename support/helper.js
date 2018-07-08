@@ -1,6 +1,11 @@
 const envVars = require("../support/env"),
     env = envVars["bankAccounts"],
-    baseUrl = envVars["apiUrl"];
+    baseUrl = envVars["apiUrl"],
+    endpoints = envVars["endpoints"];
+
+var api = require('supertest')(baseUrl);
+const account = env["newAccountDetails"];
+const basePath = endpoints["bankAccounts"];
 
 function Helper() {}
 

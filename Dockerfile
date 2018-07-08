@@ -1,6 +1,6 @@
 FROM node:7.8-slim
 # App workdir
-WORKDIR /app
+WORKDIR .
 
 # Copy app dependencies
 COPY package.json ./
