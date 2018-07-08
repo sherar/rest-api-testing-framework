@@ -8,6 +8,8 @@ var async = require('async');
 var api = require('supertest')(baseUrl);
 var expect = require('chai').expect;
 
+var helper = require('../support/helper');
+
 describe("Bank Accounts - User Journeys", function () {
 
     var commonHeaders;
@@ -71,7 +73,7 @@ describe("Bank Accounts - User Journeys", function () {
                     .send(account)
                     .expect("Content-Type", /json/)
                     .expect(200)
-                    .expect(hasValidAccountProperties)
+                    .expect(helper.acccountToHaveValidProperties)
                     .end(callback);
             },
 
@@ -84,7 +86,7 @@ describe("Bank Accounts - User Journeys", function () {
                     })
                     .expect("Content-Type", /json/)
                     .expect(200)
-                    .expect(hasValidAccountProperties)
+                    .expect(helper.acccountToHaveValidProperties)
                     .end(callback);
             },
 
@@ -102,13 +104,5 @@ describe("Bank Accounts - User Journeys", function () {
 
         ], done);
     });
-
-
-    function hasValidAccountProperties(res) {
-        const accountProperties = env["accountProperties"];
-        accountProperties.forEach(function (property) {
-            if (!(property in res.body)) throw new Error("Missing " + property + " key");
-        });
-    }
 
 });

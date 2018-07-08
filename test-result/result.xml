@@ -1,16 +1,16 @@
 <testsuites name="Mocha Tests">
-  <testsuite name="Bank Accounts" tests="4" errors="0" failures="0" skipped="0" timestamp="2018-07-07T23:13:05" time="5.912">
-    <testcase classname="Bank Accounts" name="/required_details - Get required bank account identifier elements per country" time="1.349">
+  <testsuite name="Bank Accounts" tests="4" errors="0" failures="0" skipped="0" timestamp="2018-07-08T10:22:34" time="5.612">
+    <testcase classname="Bank Accounts" name="/required_details - Get required bank account identifier elements per country" time="1.403">
     </testcase>
-    <testcase classname="Bank Accounts" name="/index - Get all the active bank accounts for the specified filters" time="1.514">
+    <testcase classname="Bank Accounts" name="/index - Get all the active bank accounts for the specified filters" time="1.3">
     </testcase>
-    <testcase classname="Bank Accounts" name="/account - Get details on specific bank account" time="1.425">
+    <testcase classname="Bank Accounts" name="/account - Get details on specific bank account" time="1.362">
     </testcase>
-    <testcase classname="Bank Accounts" name="/login - Login with invalid credentials" time="0.002">
+    <testcase classname="Bank Accounts" name="/login - Login with invalid credentials" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Bank Accounts - User Journeys" tests="1" errors="0" failures="0" skipped="0" timestamp="2018-07-07T23:13:11" time="8.844">
-    <testcase classname="Bank Accounts - User Journeys" name="Creates, list and delete a new bank account" time="7.487">
+  <testsuite name="Bank Accounts - User Journeys" tests="1" errors="0" failures="0" skipped="0" timestamp="2018-07-08T10:22:40" time="8.839">
+    <testcase classname="Bank Accounts - User Journeys" name="Creates, list and delete a new bank account" time="7.589">
     </testcase>
   </testsuite>
 </testsuites>
